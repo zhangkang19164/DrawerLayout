@@ -13,7 +13,6 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.ActionBarContainer;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
@@ -26,7 +25,7 @@ import androidx.core.content.ContextCompat;
  * @author Android-张康
  */
 @SuppressLint("Registered")
-public class BaseActivity extends AppCompatActivity {
+public class BaseActivity extends BaseDrawerLayoutActivity {
     protected TextView mTitleTextView;
     protected CharSequence mTitleText;
     private Toolbar mToolbar;
@@ -35,6 +34,7 @@ public class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setDrawerContentView(R.layout.base_drawer_layout);
     }
 
     @Override
@@ -121,7 +121,9 @@ public class BaseActivity extends AppCompatActivity {
         //用来隐藏Toolbar的阴影效果
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             ActionBarContainer actionBarContainer = findViewById(R.id.action_bar_container);
-            actionBarContainer.setElevation(0);
+            if (null != actionBarContainer) {
+                actionBarContainer.setElevation(0);
+            }
         }
         Toolbar toolbar = findViewById(R.id.action_bar);
         //如果自定义标题为空，初始化通用的标题，否则初始话自定义标题

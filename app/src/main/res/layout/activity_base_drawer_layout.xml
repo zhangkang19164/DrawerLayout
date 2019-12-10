@@ -23,13 +23,12 @@
             tools:layout_height="10dp" />
 
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/real_toolbar"
+            android:id="@+id/action_bar"
             android:layout_width="0dp"
             android:layout_height="45dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/real_status_bar"
-            app:title="标题"
             tools:background="@color/colorPrimary" />
 
         <FrameLayout
@@ -39,17 +38,17 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/real_toolbar"
+            app:layout_constraintTop_toBottomOf="@id/action_bar"
             tools:background="@android:color/holo_blue_light" />
 
         <ImageView
             android:id="@+id/open_drawer_layout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginLeft="5dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
             android:layout_marginBottom="75dp"
-            android:src="@drawable/ic_toys_black_24dp"
+            android:src="@drawable/ic_arrow_forward_black_48dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -60,14 +59,9 @@
         android:layout_width="240dp"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:background="@android:color/holo_red_light">
+        tools:background="@android:color/holo_red_light">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="左滑菜单"
-            android:textColor="@android:color/white" />
+
     </FrameLayout>
 
 </androidx.drawerlayout.widget.DrawerLayout>
